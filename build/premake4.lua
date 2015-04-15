@@ -5,28 +5,6 @@ solution "xlnt"
     configuration "Debug"
         flags { "Symbols" }
 
-project "xlnt.test"
-    kind "ConsoleApp"
-    language "C++"
-    targetname "xlnt.test"
-    targetdir "../bin"
-    includedirs { 
-       "../include",
-       "../third-party/pugixml/src",
-       "../third-party/miniz",
-       "/usr/local/Cellar/cxxtest/4.3"
-    }
-    files { 
-       "../tests/*.hpp",
-       "../tests/runner-autogen.cpp"
-    }
-    links { "xlnt" }
-    prebuildcommands { "/usr/local/Cellar/cxxtest/4.3/bin/cxxtestgen --runner=ErrorPrinter -o ../../tests/runner-autogen.cpp ../../tests/*.hpp" }
-    flags { "Unicode" }
-    configuration "windows"
-        defines { "WIN32" }
-	links { "Shlwapi" }
-
 project "xlnt"
     kind "StaticLib"
     language "C++"

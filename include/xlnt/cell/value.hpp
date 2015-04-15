@@ -37,12 +37,14 @@ public:
     value(uint16_t i);
     value(uint32_t i);
     value(uint64_t i);
-    value(long long int i);
+    //value(long long int i);
     value(float f);
     value(double d);
     value(long double d);
-    value(const char *s);
-    value(const std::string &s);
+	value(const char *s);
+	value(const wchar_t *s);
+	value(const std::string &s);
+	value(const std::wstring &s);
     value(const date &d);
     value(const datetime &d);
     value(const time &t);
@@ -59,7 +61,8 @@ public:
 
     bool is_integral() const;
 
-    std::string to_string() const;    
+	std::string to_string() const;
+	std::wstring to_wstring() const;
 
     value &operator=(value other);
 
@@ -72,8 +75,10 @@ public:
     value &operator=(uint16_t i);
     value &operator=(uint32_t i);
     value &operator=(uint64_t i);
-    value &operator=(const char *s);
-    value &operator=(const std::string &s);
+	value &operator=(const char *s);
+	value &operator=(const wchar_t *s);
+	value &operator=(const std::string &s);
+	value &operator=(const std::wstring &s);
     value &operator=(const date &d);
     value &operator=(const datetime &d);
     value &operator=(const time &t);
@@ -83,8 +88,10 @@ public:
     bool operator==(bool comparand) const;
     bool operator==(int comparand) const;
     bool operator==(double comparand) const;
-    bool operator==(const std::string &comparand) const;
-    bool operator==(const char *comparand) const;
+	bool operator==(const std::string &comparand) const;
+	bool operator==(const std::wstring &comparand) const;
+	bool operator==(const char *comparand) const;
+	bool operator==(const wchar_t *comparand) const;
     bool operator==(const date &comparand) const;
     bool operator==(const time &comparand) const;
     bool operator==(const datetime &comparand) const;
@@ -93,8 +100,10 @@ public:
     friend bool operator==(bool comparand, const value &v);
     friend bool operator==(int comparand, const value &v);
     friend bool operator==(double comparand, const value &v);
-    friend bool operator==(const std::string &comparand, const value &v);
-    friend bool operator==(const char *comparand, const value &v);
+	friend bool operator==(const std::string &comparand, const value &v);
+	friend bool operator==(const std::wstring &comparand, const value &v);
+	friend bool operator==(const char *comparand, const value &v);
+	friend bool operator==(const wchar_t *comparand, const value &v);
     friend bool operator==(const date &comparand, const value &v);
     friend bool operator==(const time &comparand, const value &v);
     friend bool operator==(const datetime &comparand, const value &v);

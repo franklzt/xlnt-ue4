@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <locale>
 #include <sstream>
+#include <codecvt>
 
 #include <xlnt/cell/cell.hpp>
 #include <xlnt/cell/cell_reference.hpp>
@@ -161,6 +162,13 @@ void cell::set_value(const value &v)
     d_->value_ = v;
 }
 
+
+void cell::set_value(const std::wstring &s)
+{
+	std::wstring_convert<std::codecvt_utf8<wchar_t>> utf8_conv;
+	set_value(utf8_conv.to_bytes(s));
+}
+
 void cell::set_value(const std::string &s)
 {
     if(!get_parent().get_parent().get_guess_types())
@@ -210,6 +218,11 @@ void cell::set_value(const std::string &s)
 void cell::set_value(const char *s)
 {
     set_value(std::string(s));
+}
+
+void cell::set_value(const wchar_t *s)
+{
+	set_value(std::wstring(s));
 }
 
 void cell::set_value(bool b)

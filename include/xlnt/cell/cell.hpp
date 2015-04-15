@@ -126,7 +126,9 @@ public:
     void set_value(const time &t);
     void set_value(const timedelta &t);
     void set_value(const char *s);
-    void set_value(const std::string &s);
+	void set_value(const std::string &s);
+	void set_value(const wchar_t *s);
+	void set_value(const std::wstring &s);
     void set_value(const value &v);
     
     cell &operator=(const cell &rhs);

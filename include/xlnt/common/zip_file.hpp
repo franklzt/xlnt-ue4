@@ -95,7 +95,7 @@ public:
     
     void writestr(const std::string &arcname, const std::string &bytes);
     void writestr(const zip_info &arcname, const std::string &bytes);
-    
+
     std::string get_filename() const { return filename_; }
     
     std::string comment;

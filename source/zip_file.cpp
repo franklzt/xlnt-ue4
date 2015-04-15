@@ -497,7 +497,7 @@ void zip_file::writestr(const std::string &arcname, const std::string &bytes)
     {
         start_write();
     }
-
+	
     if(!mz_zip_writer_add_mem(archive_.get(), arcname.c_str(), bytes.data(), bytes.size(), MZ_BEST_COMPRESSION))
     {
         throw std::runtime_error("write error");
@@ -515,7 +515,7 @@ void zip_file::writestr(const zip_info &info, const std::string &bytes)
     {
         start_write();
     }
-    
+
     auto crc = crc32buf(bytes.c_str(), bytes.size());
     
     if(!mz_zip_writer_add_mem_ex(archive_.get(), info.filename.c_str(), bytes.data(), bytes.size(), info.comment.c_str(), (mz_uint16)info.comment.size(), MZ_BEST_COMPRESSION, 0, crc))

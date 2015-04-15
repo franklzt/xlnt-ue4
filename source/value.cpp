@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <codecvt>
 
 #include <xlnt/cell/value.hpp>
 #include <xlnt/common/datetime.hpp>
@@ -50,6 +51,16 @@ value::value(const char *s) : value(std::string(s))
 
 value::value(const std::string &s) : type_(type::string), string_value_(s)
 {
+}
+
+value::value(const wchar_t *s) : value(std::wstring(s))
+{
+}
+
+value::value(const std::wstring &s) : type_(type::string)
+{
+	std::wstring_convert<std::codecvt_utf8<wchar_t>> utf8_conv;
+	string_value_ = utf8_conv.to_bytes(s);
 }
 
 value &value::operator=(value other)
@@ -194,6 +205,26 @@ std::string value::to_string() const
     return "";
 }
 
+std::wstring value::to_wstring() const
+{
+	std::wstring_convert<std::codecvt_utf8<wchar_t>> utf8_conv;
+
+	switch (type_)
+	{
+	case type::boolean:
+		return numeric_value_ != 0 ? L"1" : L"0";
+	case type::numeric:
+		return std::to_wstring(numeric_value_);
+	case type::string:
+	case type::error:
+		return utf8_conv.from_bytes(string_value_);
+	case type::null:
+		return L"";
+	}
+
+	return L"";
+}
+
 bool value::operator==(bool value) const
 {
     return type_ == type::boolean && (numeric_value_ != 0) == value;
@@ -209,6 +240,17 @@ bool value::operator==(double comparand) const
     return type_ == type::numeric && numeric_value_ == comparand;
 }
 
+bool value::operator==(const std::wstring &comparand) const
+{
+	if (type_ == type::string)
+	{
+		std::wstring_convert<std::codecvt_utf8<wchar_t>> utf8_conv;
+		return operator==(utf8_conv.to_bytes(comparand));
+	}
+
+	return false;
+}
+
 bool value::operator==(const std::string &comparand) const
 {
     if(type_ == type::string)
@@ -222,6 +264,11 @@ bool value::operator==(const std::string &comparand) const
 bool value::operator==(const char *comparand) const
 {
     return *this == std::string(comparand);
+}
+
+bool value::operator==(const wchar_t *comparand) const
+{
+	return *this == std::wstring(comparand);
 }
 
 bool value::operator==(const time &comparand) const
@@ -308,9 +355,19 @@ bool operator==(const char *comparand, const xlnt::value &value)
     return value == comparand;
 }
 
+bool operator==(const wchar_t *comparand, const xlnt::value &value)
+{
+	return value == comparand;
+}
+
 bool operator==(const std::string &comparand, const xlnt::value &value)
 {
     return value == comparand;
+}
+
+bool operator==(const std::wstring &comparand, const xlnt::value &value)
+{
+	return value == comparand;
 }
 
 bool operator==(const time &comparand, const xlnt::value &value)

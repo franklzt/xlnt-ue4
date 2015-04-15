@@ -5,12 +5,12 @@ xlnt-ue4
 xlnt-ue4 is a C++11 library for reading, writing, and modifying xlsx files for Unreal Engine 4, based on https://github.com/tfussell/xlnt.
 
 ##Installation
-Install from release:
+###Install from release:
 1. Download release from https://github.com/AlanIWBFT/xlnt-ue4/releases
 2. Copy /xlnt into UE4InstallationFolder/Engine/Source/ThirdParty/
 3. Installation now completed.
 
-Install from source:
+###Install from source:
 1. Download premake5 from http://sourceforge.net/projects/premake/files/ and put premake5.exe into /build.
 2. Run
       premake5 vs2013

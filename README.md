@@ -1,74 +1,47 @@
-xlnt
+xlnt-ue4
 ====
 
 ## Introduction
-xlnt is a C++11 library for reading, writing, and modifying xlsx files. The API is generally based on [openpyxl](https://bitbucket.org/openpyxl/openpyxl), a python library for reading and writing xlsx/xlsm files. It is still very much a work in progress, but the core development work is complete.
+xlnt-ue4 is a C++11 library for reading, writing, and modifying xlsx files for Unreal Engine 4, based on https://github.com/tfussell/xlnt.
+
+##Installation
+1. Download release from https://github.com/AlanIWBFT/xlnt-ue4/releases
+2. Download premake5 from http://sourceforge.net/projects/premake/files/ and put premake5.exe into /build.
+4. Run
+      premake5 vs2013
+   and you will get /build/vs2013/xlnt.sln
+5. Clone pugixml(https://github.com/zeux/pugixml) into /third-party/pugixml
+6. Open /build/vs2013/xlnt.sln and set the configuration to Release, then build (x64 by default). You will get xlnt_release_x64.lib in /lib.
+7. mkdir UE4InstallationFolder/Engine/Source/ThirdParty/xlnt, and copy all the contents of xlnt-ue4 into that folder.
+8. Installation now completed.
 
 ## Usage
-Including xlnt in your project
+1. Edit your ProjectName.Build.cs, and add the following line:
+   PublicDependencyModuleNames.Add("xlnt");
+
+2.
 ```c++
-// with -Ixlnt/include
-#include <xlnt/xlnt.hpp>
+#include "ThirdParty/xlnt/include/xlnt/xlnt.hpp"
+```
+or
+```c++
+#include "xlnt/xlnt.hpp" (there may be some IntelliSense errors, but it doesn't matter)
 ```
 
-Creating a new spreadsheet and saving it
+3.
 ```c++
 xlnt::workbook wb;
 xlnt::worksheet ws = wb.get_active_sheet();
-ws.cell("A1").set_value(5);
-ws.cell("B2").set_value("string data");
-ws.cell("C3").set_formula("=RAND()");
-ws.merge_cells("C3:C4");
-ws.freeze_panes("B2");
+ws.get_cell("A1").set_value("Hello World!");
+ws.get_cell("A2").set_value("你好，世界！"); //wstring support
 wb.save("book1.xlsx");
+
+wb.load("E:\\data.xlsx");
+ws = wb.get_active_sheet();
+
+GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, ws.get_cell("A1").get_value().to_wstring().c_str());
+GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, ws.get_cell("A2").get_value().to_wstring().c_str());
 ```
-
-Opening an existing spreadsheet and printing all rows
-```c++
-xlnt::workbook wb2;
-wb2.load("book2.xlsx");
-
-// no need to use references, iterators are only wrappers around pointers to memory in the workbook
-for(auto row : wb2["sheet2"].rows())
-{
-    for(auto cell : row)
-    {
-        std::cout << cell.get_value().to_string() << std::endl;
-    }
-}
-```
-
-## Building
-xlnt is regularly built and passes all 200+ tests in GCC 4.8.2, MSVC 12, and Clang 3.4.
-
-Workspaces for Visual Studio 2013, and GNU Make can be created using the development version of premake (currently available [here](https://bitbucket.org/premake/premake-dev), binaries [here](http://sourceforge.net/projects/premake/files/Premake/nightlies/)) and the premake5.lua script in the build directory. XCode workspaces can be generated using premake4.lua and premake4 (binaries [here](http://sourceforge.net/projects/premake/files/Premake/4.3/)).
-
-In Windows, with Visual Studio 2013:
-```batch
-cd build
-premake5 vs2013
-start vs2013/xlnt.sln
-```
-
-In Linux, with GCC 4.8:
-```bash
-cd build
-premake5 gmake
-cd gmake
-make
-```
-
-In OSX, with Clang 3.4 (can also use gmake as described above):
-```bash
-cd build
-premake4 xcode4
-open xcode4/xlnt.xcworkspace
-```
-
-## Dependencies
-xlnt uses the following libraries, which are included in the source tree for convenience:
-- [miniz v1.15_r4](https://code.google.com/p/miniz/) (public domain/unlicense)
-- [pugixml v1.4](http://pugixml.org/) (MIT license)
 
 ## License
 xlnt is currently released to the public for free under the terms of the MIT License:

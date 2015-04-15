@@ -5,19 +5,26 @@ xlnt-ue4
 xlnt-ue4 is a C++11 library for reading, writing, and modifying xlsx files for Unreal Engine 4, based on https://github.com/tfussell/xlnt.
 
 ##Installation
+Install from release:
 1. Download release from https://github.com/AlanIWBFT/xlnt-ue4/releases
-2. Download premake5 from http://sourceforge.net/projects/premake/files/ and put premake5.exe into /build.
-4. Run
+2. Copy /xlnt into UE4InstallationFolder/Engine/Source/ThirdParty/
+3. Installation now completed.
+
+Install from source:
+1. Download premake5 from http://sourceforge.net/projects/premake/files/ and put premake5.exe into /build.
+2. Run
       premake5 vs2013
    and you will get /build/vs2013/xlnt.sln
-5. Clone pugixml(https://github.com/zeux/pugixml) into /third-party/pugixml
-6. Open /build/vs2013/xlnt.sln and set the configuration to Release, then build (x64 by default). You will get xlnt_release_x64.lib in /lib.
-7. mkdir UE4InstallationFolder/Engine/Source/ThirdParty/xlnt, and copy all the contents of xlnt-ue4 into that folder.
-8. Installation now completed.
+3. Clone pugixml(https://github.com/zeux/pugixml) into /third-party/pugixml
+4. Open /build/vs2013/xlnt.sln and set the configuration to Release, then build (x64 by default). You will get xlnt_release_x64.lib in /lib.
+5. mkdir UE4InstallationFolder/Engine/Source/ThirdParty/xlnt, and copy all the contents of xlnt-ue4 into that folder.
+6. Installation now completed.
 
 ## Usage
 1. Edit your ProjectName.Build.cs, and add the following line:
-   PublicDependencyModuleNames.Add("xlnt");
+```c#
+PublicDependencyModuleNames.Add("xlnt");
+```
 
 2.
 ```c++
@@ -25,7 +32,7 @@ xlnt-ue4 is a C++11 library for reading, writing, and modifying xlsx files for U
 ```
 or
 ```c++
-#include "xlnt/xlnt.hpp" (there may be some IntelliSense errors, but it doesn't matter)
+#include "xlnt/xlnt.hpp" //(there may be some IntelliSense errors, but it doesn't matter)
 ```
 
 3.
@@ -34,9 +41,9 @@ xlnt::workbook wb;
 xlnt::worksheet ws = wb.get_active_sheet();
 ws.get_cell("A1").set_value("Hello World!");
 ws.get_cell("A2").set_value("你好，世界！"); //wstring support
-wb.save("book1.xlsx");
+wb.save("test.xlsx");
 
-wb.load("E:\\data.xlsx");
+wb.load("test.xlsx");
 ws = wb.get_active_sheet();
 
 GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, ws.get_cell("A1").get_value().to_wstring().c_str());

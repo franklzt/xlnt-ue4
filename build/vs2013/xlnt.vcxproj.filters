@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt">
+      <UniqueIdentifier>{5EF4E469-4A57-740E-F3DC-ACC4DF1E4091}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\cell">
+      <UniqueIdentifier>{4DE4EC41-B9FA-EAD7-0272-76F96EC7BB5F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\charts">
+      <UniqueIdentifier>{D295E770-3EF7-C47E-C764-0B3133C5FB3D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\common">
+      <UniqueIdentifier>{F6BF6C71-6221-4A7F-EB8E-903157EF803E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\drawing">
+      <UniqueIdentifier>{F9B12AF2-E540-B4BB-8E5F-C8B67ACDC461}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\reader">
+      <UniqueIdentifier>{4070AE93-ACD1-8BA1-353F-D253A19FC260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\styles">
+      <UniqueIdentifier>{91532097-FDB4-FDA4-8622-4457F2823464}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\workbook">
+      <UniqueIdentifier>{3BC33F00-A72F-FBFA-7023-9358DC4E1D63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\worksheet">
+      <UniqueIdentifier>{A9C96709-95C3-905B-7E30-276C6AC9F6C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\xlnt\writer">
+      <UniqueIdentifier>{0A2148A0-7682-25AE-FFEF-6B606B505C6D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{76FF3A1C-62A1-65F2-4B5C-7946379DEC42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\detail">
+      <UniqueIdentifier>{7836F862-E4F6-7399-AD31-BD1619B1B875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third-party">
+      <UniqueIdentifier>{9DC1EB7C-0977-6472-926B-5E49FE1F5B76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third-party\miniz">
+      <UniqueIdentifier>{931D0294-FF33-002A-48AB-8B4BB400D1B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third-party\pugixml">
+      <UniqueIdentifier>{92C66D9F-FE27-4BAD-8795-915FF3F5816C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third-party\pugixml\src">
+      <UniqueIdentifier>{A97D4E97-15B5-962E-1EBF-FA518A75BD27}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\xlnt\cell\cell.hpp">
+      <Filter>include\xlnt\cell</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\cell\cell_reference.hpp">
+      <Filter>include\xlnt\cell</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\cell\comment.hpp">
+      <Filter>include\xlnt\cell</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\cell\value.hpp">
+      <Filter>include\xlnt\cell</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\axis.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\bar_chart.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\chart.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\error_bar.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\graph_chart.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\legend.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\line_chart.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\pie_chart.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\scatter_chart.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\charts\series.hpp">
+      <Filter>include\xlnt\charts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\common\datetime.hpp">
+      <Filter>include\xlnt\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\common\exceptions.hpp">
+      <Filter>include\xlnt\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\common\relationship.hpp">
+      <Filter>include\xlnt\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\common\string_table.hpp">
+      <Filter>include\xlnt\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\common\types.hpp">
+      <Filter>include\xlnt\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\common\zip_file.hpp">
+      <Filter>include\xlnt\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\config.hpp">
+      <Filter>include\xlnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\drawing\drawing.hpp">
+      <Filter>include\xlnt\drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\chart_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\comment_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\drawing_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\excel_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\string_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\style_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\theme_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\workbook_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\reader\worksheet_reader.hpp">
+      <Filter>include\xlnt\reader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\styles\alignment.hpp">
+      <Filter>include\xlnt\styles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\styles\borders.hpp">
+      <Filter>include\xlnt\styles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\styles\color.hpp">
+      <Filter>include\xlnt\styles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\styles\fill.hpp">
+      <Filter>include\xlnt\styles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\styles\font.hpp">
+      <Filter>include\xlnt\styles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\styles\number_format.hpp">
+      <Filter>include\xlnt\styles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\styles\protection.hpp">
+      <Filter>include\xlnt\styles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\styles\style.hpp">
+      <Filter>include\xlnt\styles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\workbook\document_properties.hpp">
+      <Filter>include\xlnt\workbook</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\workbook\document_security.hpp">
+      <Filter>include\xlnt\workbook</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\workbook\workbook.hpp">
+      <Filter>include\xlnt\workbook</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\worksheet\column_properties.hpp">
+      <Filter>include\xlnt\worksheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\worksheet\page_margins.hpp">
+      <Filter>include\xlnt\worksheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\worksheet\page_setup.hpp">
+      <Filter>include\xlnt\worksheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\worksheet\range.hpp">
+      <Filter>include\xlnt\worksheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\worksheet\range_reference.hpp">
+      <Filter>include\xlnt\worksheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\worksheet\row_properties.hpp">
+      <Filter>include\xlnt\worksheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\worksheet\sheet_protection.hpp">
+      <Filter>include\xlnt\worksheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\worksheet\worksheet.hpp">
+      <Filter>include\xlnt\worksheet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\chart_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\comment_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\drawing_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\excel_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\string_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\style_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\theme_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\workbook_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\worksheet_writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\writer\writer.hpp">
+      <Filter>include\xlnt\writer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\xlnt\xlnt.hpp">
+      <Filter>include\xlnt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\constants.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\detail\cell_impl.hpp">
+      <Filter>source\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\detail\workbook_impl.hpp">
+      <Filter>source\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\detail\worksheet_impl.hpp">
+      <Filter>source\detail</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\cell.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\cell_reference.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\comment.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\constants.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\datetime.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\detail\cell_impl.cpp">
+      <Filter>source\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\document_properties.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\drawing.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\exceptions.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\number_format.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\protection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\range.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\range_reference.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\reader.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\relationship.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\sheet_protection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\string_table.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\style.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\style_writer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\value.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\workbook.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\worksheet.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\writer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\zip_file.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third-party\miniz\miniz.c">
+      <Filter>third-party\miniz</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\third-party\pugixml\src\pugixml.cpp">
+      <Filter>third-party\pugixml\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

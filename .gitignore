@@ -1,9 +1,6 @@
 bin/
 lib/
-build/
-!build/vs2013/xlnt.sln
-!build/vs2013/xlnt.vcxproj
-!build/vs2013/xlnt.vcxproj.filters
+build/vs2013/*/
 *.obj
 *.sdf
 *.suo

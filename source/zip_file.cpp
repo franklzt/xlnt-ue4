@@ -404,7 +404,7 @@ std::size_t write_callback(void *opaque, mz_uint64 file_ofs, const void *pBuf, s
     
     if(file_ofs + n > buffer->size())
     {
-        buffer->resize(file_ofs + n);
+        buffer->resize((unsigned int)file_ofs + n);
     }
 
     for(std::size_t i = 0; i < n; i++)

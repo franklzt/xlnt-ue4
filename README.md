@@ -11,14 +11,10 @@ xlnt-ue4 is a C++11 library for reading, writing, and modifying xlsx files for U
 3. Installation now completed.
 
 ###Install from source:
-1. Download premake5 from http://sourceforge.net/projects/premake/files/ and put premake5.exe into /build.
-2. Run
-      premake5 vs2013
-   and you will get /build/vs2013/xlnt.sln
-3. Clone pugixml(https://github.com/zeux/pugixml) into /third-party/pugixml
-4. Open /build/vs2013/xlnt.sln and set the configuration to Release, then build (x64 by default). You will get xlnt_release_x64.lib in /lib.
-5. mkdir UE4InstallationFolder/Engine/Source/ThirdParty/xlnt, and copy all the contents of xlnt-ue4 into that folder.
-6. Installation now completed.
+1. Clone pugixml(https://github.com/zeux/pugixml) into /third-party/pugixml
+2. Open /build/vs2013/xlnt.sln and set the configuration to Release, then build (x64 by default). You will get xlnt_release_x64.lib in /lib.
+3. mkdir UE4InstallationFolder/Engine/Source/ThirdParty/xlnt, and copy all the contents of xlnt-ue4 into that folder.
+4. Installation now completed.
 
 ## Usage
 1. Edit your ProjectName.Build.cs, and add the following line:

@@ -12,8 +12,8 @@ public class xlnt : ModuleRules
 		PublicIncludePaths.Add(xlntPath + "include");
 		PublicLibraryPaths.Add(xlntPath + "lib");
 		
-		if (Target.Configuration == UnrealTargetConfiguration.Debug && BuildConfiguration.bDebugBuildsActuallyUseDebugCRT)
-        {
+		if (Target.Configuration == UnrealTargetConfiguration.Debug || Target.Configuration ==  UnrealTargetConfiguration.DebugGame)
+        	{
 			if(Target.Platform == UnrealTargetPlatform.Win64)
 				PublicAdditionalLibraries.Add(xlntPath + "lib/xlnt_debug_x64.lib");
 			else

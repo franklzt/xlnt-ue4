@@ -388,7 +388,12 @@ std::vector<std::string> reader::read_shared_string(const std::string &xml_strin
     doc.load(xml_string.c_str());
     auto root_node = doc.child("sst");
     //int count = root_node.attribute("count").as_int();
-    int unique_count = root_node.attribute("uniqueCount").as_int();
+	int unique_count;
+
+	if(root_node.attribute("uniqueCount"))
+		unique_count = root_node.attribute("uniqueCount").as_int();
+	else
+		unique_count = root_node.attribute("count").as_int();//Workaround for WPS Office
 
     for(auto si_node : root_node)
     {

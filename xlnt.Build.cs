@@ -3,11 +3,11 @@ using UnrealBuildTool;
 
 public class xlnt : ModuleRules
 {
-	public xlnt(TargetInfo Target)
+	public xlnt(ReadOnlyTargetRules Target) : base(Target)
 	{
 		Type = ModuleType.External;
 
-		string xlntPath = UEBuildConfiguration.UEThirdPartySourceDirectory + "xlnt/";
+		string xlntPath = Target.UEThirdPartySourceDirectory + "xlnt/";
 
 		PublicIncludePaths.Add(xlntPath + "include");
 		PublicLibraryPaths.Add(xlntPath + "lib");
